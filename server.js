@@ -2,6 +2,7 @@ require('dotenv').config()
 
 
 const express = require('express')
+const entryRoutes = require('./routes/entryroute')
 
 //express
 const app = express()
@@ -16,7 +17,7 @@ app.use((req,res ,next) =>{
 
 
 //routes
-app.use('/api/workout',workoutRoutes)
+app.use('/api/workout',entryRoutes)
 
 
 app.listen(process.env.PORT, () => {
