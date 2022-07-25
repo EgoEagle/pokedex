@@ -1,10 +1,14 @@
 import Display from './components/Display.js';
-import './App.css';
+import Dex from './components/Dex.js';
+import React , {useState} from 'react';
+
 
 function App() {
+  const[pokemon, setPokemon] = useState(["charmander","bulbasaur"]);
+
     return(
       <div>
-        <Display/>
+        <Dex pokemon = {pokemon} />
       </div>
 
     )
