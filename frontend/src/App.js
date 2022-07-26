@@ -5,11 +5,13 @@ import axios from 'axios'
 
 
 function App() {
-  const[pokemon, setPokemon] = useState([]);
-  const[currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
-  const[nextPageUrl, setNextPageUrl] = useState()
-  const[prevPageUrl, setPrevPageUrl] = useState()
-  const[loading, setLoading] = useState(true)
+  const [pokemon, setPokemon] = useState([])
+  const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
+  const [nextPageUrl, setNextPageUrl] = useState()
+  const [prevPageUrl, setPrevPageUrl] = useState()
+  const [loading, setLoading] = useState(true)
+  const [pokemondata, setPokemonData] = useState([])
+
 
 
 
@@ -20,19 +22,33 @@ function App() {
     axios.get(currentPageUrl, {
       cancelToken: new axios.CancelToken(c => cancel = c)
     }).then(res => {
-
       setLoading(false)
-      setPokemon(res.data.results.map(p => p))
-      setNextPageUrl(res.data.next);
-      setPrevPageUrl(res.data.prev);
+      setNextPageUrl(res.data.next)
+      setPrevPageUrl(res.data.previous)
+      setPokemon(res.data.results.map(p => p.url))
+      
+      function createPokemonObject(result){
+        result.forEach( async (pokemon) => {
+          axios.get(pokemon)
+          .then(res => {
+            setPokemonData(currentList =>[...currentList,res.data])
+          })
+
+        })
 
 
-  })
-  //cleans up old request
-  return() => cancel()
+      }
+      createPokemonObject(pokemon)
+
+    })
+
+    return () => cancel()
+  }, [currentPageUrl])
+
+ 
 
 
-},[currentPageUrl])
+  
 
 
 function gotoNextPage(){
@@ -51,10 +67,10 @@ function gotoPrevPage(){
 
     return(
       <div>
-        <Dex pokemon = {pokemon} />
+        <Dex pokemon = {pokemondata} />
         <Pagination 
-          gotoNextPage = {gotoNextPage ? gotoNextPage : null}
-          gotoPrevPage = {gotoPrevPage ? gotoPrevPage: null}
+          gotoNextPage = {nextPageUrl ? gotoNextPage : null}
+          gotoPrevPage = {prevPageUrl ? gotoPrevPage: null}
         />
 
       </div>

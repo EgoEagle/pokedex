@@ -5,17 +5,9 @@ import axios from 'axios'
 
 
 export default function PokemonList({pokemon}){
-    /* const[pokemonlist, setPokemonlist ] = useState();
-     useEffect(() => {
-          axios.get(currentPageUrl).then(res => {
-      
 
-        })
-
-      
-      },[{pokemon}])     */
-
- 
+     
+     
 
      return(
           <div>
@@ -23,7 +15,11 @@ export default function PokemonList({pokemon}){
 
                {pokemon.map(p => (
                     
-                    <div key={p.name} > {p.name}  </div>
+                    <div key={p} > 
+                         <p>{p.name}  </p>
+                         <p>{p.base_experience}  </p>
+                    
+                    </div>
                     
 
                ))}
