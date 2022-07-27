@@ -48,7 +48,7 @@ function App() {
 console.log(pokemons)
 
     return(
-      <div>
+      <div className="displayDiv">
         <NavBar/>
          <div className="display">
           {
@@ -64,7 +64,7 @@ console.log(pokemons)
         
           
         </div>
-        <button onClick={getAllPokemons}> Load More</button>
+        <button className="load" onClick={getAllPokemons}> Load More</button>
 
       </div>
 
