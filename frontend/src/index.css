@@ -17,27 +17,30 @@ p::first-letter {
 }
 
 .display{
+  margin-left:40%;
   width:30%;
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .title{
-  width:25%;
-  height:18%;
+  
+  width:200px;
+  height:190px;
 
 }
 
 .icon {
-  margin-right:5%;
-  margin-top:8%;
-  width:10%;
-  height:18%;
+  margin-right:2%;
+  margin-top: 60px;
+  width:80px;
+  height:80px;
 
 }
 
 .header{
-  height:100px;
+  height:170px;
   justify-content: center;
   background: linear-gradient(90deg, #3a38d4 1.18%, #837cf1 100%);
   display: flex;
