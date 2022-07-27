@@ -10,7 +10,7 @@ export default function PokemonList({id,name,sprite,type}){
      
 
      return(
-          <div className={style} key={id}>
+          <div className={`dex ${style}`} key={id}>
                <p>{id}</p>
                <p>{type}</p>
                <p>{name}</p>

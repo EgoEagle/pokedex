@@ -17,16 +17,61 @@ p::first-letter {
 }
 
 
-.load{
-  position: absolute; 
-  top: 10px; 
-  left: 50%;
+
+button:hover {
+  background-image: linear-gradient(
+    145deg,
+    transparent 10%,
+    rgb(8, 200, 248) 10% 20%,
+    transparent 20% 30%,
+    rgb(8, 200, 248) 30% 40%,
+    transparent 40% 50%,
+    rgb(8, 200, 248) 50% 60%,
+    transparent 60% 70%,
+    rgb(8, 200, 248) 70% 80%,
+    transparent 80% 90%,
+    rgb(8, 200, 248) 90% 100%
+  );
+  animation: background 3s linear infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+
+
+
+button {
+
+  position: fixed;
+  bottom: -4px;
+  right: 10px;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: rgb(57, 156, 214);
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  background-size: 100% 100%;
+  box-shadow: 0 0 0 7px rgb(8, 200, 248) inset;
+  margin-bottom: 15px;
 }
 
 
 .display{
-  margin-left:3%;
-  width:100%;
+  margin-left:12%;
+  width:80%;
   display: flex;
   flex-wrap: wrap;
 
@@ -54,11 +99,42 @@ p::first-letter {
   display: flex;
 }
 
+.ground {
+  background-color: #E0C068;
+}
+.ice {
+  background-color: #98D8D8;
+}
+
+.steel {
+  background-color: #B8B8D0;
+}
+
+.fighting {
+  background-color: #C03028;
+}
+
+.dragon {
+  background-color: #7038F8;
+}
+
+.flying {
+  background-color: #A890F0;
+}
+
+.dark {
+  background-color: #705848;
+}
+
+.psychic {
+  background-color: #A65E9A;
+}
+
 .rock {
   background-color: rgb(148, 81, 81);
 }
 .ghost {
-  background-color: rgb(247, 247, 247);
+  background-color: #705898 ;
 }
 .electric {
   background-color: rgb(255, 255, 161);
@@ -70,17 +146,23 @@ p::first-letter {
   background-color: #e0a7f6;
 }
 .normal {
-  background-color: #F4F4F4;
+  background-color: #A8A878
+  ;
 }
 .fairy {
   background-color: rgba(255, 192, 203, 0.863);
 }
 .fire {
-  background-color: #FBE3DF;
+  background-color: #f84f4f;
 }
 .grass {
-  background-color:#E2F9E1;
+  background-color:#78C850;
 }
 .water {
   background-color:#E0F1FD;
+}
+
+.dex{
+  width:150px;
+
 }
