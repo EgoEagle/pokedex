@@ -1,4 +1,5 @@
 import Pagination from './components/Pagination.js';
+import NavBar from './components/NavBar.js';
 import Dex from './components/Dex.js';
 import React , {useState , useEffect} from 'react';
 import axios from 'axios';
@@ -48,6 +49,7 @@ console.log(pokemons)
 
     return(
       <div>
+        <NavBar/>
          <div className="display">
           {
             pokemons.map((pokemon, index) =>
