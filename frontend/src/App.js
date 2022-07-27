@@ -1,22 +1,17 @@
 import Pagination from './components/Pagination.js';
 import Dex from './components/Dex.js';
 import React , {useState , useEffect} from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 
 function App() {
   const [pokemons, setPokemons] = useState([])
   const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
-  const [loading, setLoading] = useState(true)
 
 
-
-
-const getAllPokemons = async () => {
+  const getAllPokemons = async () => {
  
-
-    axios.get(nextPageUrl)
-      .then(res => {
+    axios.get(nextPageUrl).then(res => {
       setNextPageUrl(res.data.next)
       
       function createPokemonObject(pokemons){
@@ -25,23 +20,23 @@ const getAllPokemons = async () => {
           .then(res => {
             setPokemons(currentList =>[...currentList,res.data])
           })
-
         })
-
-
       }
-      createPokemonObject(pokemons)
-    }
+      createPokemonObject(res.data.results)
       
 
-}
-
+    })
+    
+    
+  }
+  console.log(nextPageUrl)
  
-useEffect(() => {
-  getAllPokemons()
- }, [])
 
   
+
+  useEffect(() => {
+    getAllPokemons()
+   }, [])
 
 
 
@@ -65,7 +60,7 @@ useEffect(() => {
 
       </div>
 
-    )
+    );
 }
 
 export default App;
