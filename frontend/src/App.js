@@ -9,6 +9,7 @@ function App() {
   const [pokemons, setPokemons] = useState([])
   const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
   let pokemonArray = [];
+  pokemons.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
 
 
   const getAllPokemons = async () => {
@@ -21,12 +22,17 @@ function App() {
         pokemons.forEach( async (pokemon) => {
           axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
           .then (res => {
-             
-             setPokemons(currentList =>[...currentList,res.data])
-             setPokemons.sort((a, b) => a.id > b.id ? 1 : -1)
+            pokemons.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
+            setPokemons(currentList =>[...currentList,res.data])
+
           })
+
+          pokemons.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
         })
+        
+
       }
+
       createPokemonObject(res.data.results)
       
 
@@ -34,18 +40,13 @@ function App() {
     
     
   }
-  console.log(nextPageUrl)
- 
 
-  
 
   useEffect(() => {
     getAllPokemons()
 
     
    }, [])
-
-console.log(pokemons)
 
     return(
       <div className="displayDiv">
@@ -57,6 +58,7 @@ console.log(pokemons)
             key={index}
             id={pokemon.id}
             name={pokemon.name}
+            type={pokemon.types[0].type.name}
             sprite = {pokemon.sprites.front_default}
             />
 

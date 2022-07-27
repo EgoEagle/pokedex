@@ -4,14 +4,15 @@ import axios from 'axios'
 
 
 
-export default function PokemonList({id,name,sprite}){
+export default function PokemonList({id,name,sprite,type}){
 
-     
+     const style = `${type}`
      
 
      return(
-          <div key={id}>
-
+          <div className={style} key={id}>
+               <p>{id}</p>
+               <p>{type}</p>
                <p>{name}</p>
                <img src={sprite}/>
  
