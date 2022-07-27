@@ -6,25 +6,18 @@ import axios from 'axios'
 
 function App() {
   const [pokemons, setPokemons] = useState([])
-  const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
-  const [nextPageUrl, setNextPageUrl] = useState()
-  const [prevPageUrl, setPrevPageUrl] = useState()
+  const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
   const [loading, setLoading] = useState(true)
-  const [pokemondata, setPokemonData] = useState([])
 
 
 
 
+const getAllPokemons = async () => {
+ 
 
-  useEffect(() => {
-    setLoading(true)
-    let cancel
-    axios.get(currentPageUrl, {
-      cancelToken: new axios.CancelToken(c => cancel = c)
-    }).then(res => {
-      setLoading(false)
+    axios.get(nextPageUrl
+      .then(res => {
       setNextPageUrl(res.data.next)
-      setPrevPageUrl(res.data.previous)
       setPokemons(res.data.results.map(p => p))
       
       function createPokemonObject(pokemons){
@@ -41,25 +34,15 @@ function App() {
       createPokemonObject(pokemons)
 
     })
-    return () => cancel()
-  }, [currentPageUrl])
 
-  console.log(pokemons)
+ 
+}
+
  
 
 
   
 
-
-function gotoNextPage(){
-  setCurrentPageUrl(nextPageUrl)
-
-}
-
-function gotoPrevPage(){
-  setCurrentPageUrl(prevPageUrl)
-
-}
 
 
 
@@ -70,7 +53,8 @@ function gotoPrevPage(){
          <div>
           {
             pokemons.map((pokemon, index) =>
-            <Dex pokemon  
+            <Dex
+            key={index}
             id={pokemon.id}
             name={pokemon.name}
             base_experience={pokemon.base_experience}
@@ -80,10 +64,7 @@ function gotoPrevPage(){
         
           
         </div>
-        <Pagination 
-          gotoNextPage = {nextPageUrl ? gotoNextPage : null}
-          gotoPrevPage = {prevPageUrl ? gotoPrevPage: null}
-        />
+        <button onClick={getAllPokemons()}> </button>
 
       </div>
 
