@@ -7,6 +7,7 @@ import axios from 'axios';
 function App() {
   const [pokemons, setPokemons] = useState([])
   const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
+  let pokemonArray = [];
 
 
   const getAllPokemons = async () => {
@@ -14,11 +15,14 @@ function App() {
     axios.get(nextPageUrl).then(res => {
       setNextPageUrl(res.data.next)
       
-      function createPokemonObject(pokemons){
+      function createPokemonObject (pokemons){
+        
         pokemons.forEach( async (pokemon) => {
           axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-          .then(res => {
-            setPokemons(currentList =>[...currentList,res.data])
+          .then (res => {
+             
+             setPokemons(currentList =>[...currentList,res.data])
+             setPokemons.sort((a, b) => a.id > b.id ? 1 : -1)
           })
         })
       }
@@ -36,6 +40,8 @@ function App() {
 
   useEffect(() => {
     getAllPokemons()
+
+    
    }, [])
 
 console.log(pokemons)
