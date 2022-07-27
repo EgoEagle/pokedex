@@ -5,7 +5,7 @@ import axios from 'axios'
 
 
 function App() {
-  const [pokemon, setPokemon] = useState([])
+  const [pokemons, setPokemons] = useState([])
   const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
   const [nextPageUrl, setNextPageUrl] = useState()
   const [prevPageUrl, setPrevPageUrl] = useState()
@@ -25,26 +25,26 @@ function App() {
       setLoading(false)
       setNextPageUrl(res.data.next)
       setPrevPageUrl(res.data.previous)
-      setPokemon(res.data.results.map(p => p.url))
+      setPokemons(res.data.results.map(p => p))
       
-      function createPokemonObject(result){
-        result.forEach( async (pokemon) => {
-          axios.get(pokemon)
+      function createPokemonObject(pokemons){
+        pokemons.forEach( async (pokemon) => {
+          axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
           .then(res => {
-            setPokemonData(currentList =>[...currentList,res.data])
+            setPokemons(currentList =>[...currentList,res.data])
           })
 
         })
 
 
       }
-      createPokemonObject(pokemon)
+      createPokemonObject(pokemons)
 
     })
-
     return () => cancel()
   }, [currentPageUrl])
 
+  console.log(pokemons)
  
 
 
@@ -67,7 +67,19 @@ function gotoPrevPage(){
 
     return(
       <div>
-        <Dex pokemon = {pokemondata} />
+         <div>
+          {
+            pokemons.map((pokemon, index) =>
+            <Dex pokemon  
+            id={pokemon.id}
+            name={pokemon.name}
+            base_experience={pokemon.base_experience}
+            />
+
+          )}
+        
+          
+        </div>
         <Pagination 
           gotoNextPage = {nextPageUrl ? gotoNextPage : null}
           gotoPrevPage = {prevPageUrl ? gotoPrevPage: null}

@@ -4,26 +4,16 @@ import axios from 'axios'
 
 
 
-export default function PokemonList({pokemon}){
+export default function PokemonList({id,name,base_experience}){
 
      
      
 
      return(
-          <div>
+          <div key={id}>
 
-
-               {pokemon.map(p => (
-                    
-                    <div key={p} > 
-                         <p>{p.name}  </p>
-                         <p>{p.base_experience}  </p>
-                    
-                    </div>
-                    
-
-               ))}
-              
+               {name}  {base_experience}  
+ 
 
           </div>
 
