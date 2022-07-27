@@ -15,10 +15,9 @@ function App() {
 const getAllPokemons = async () => {
  
 
-    axios.get(nextPageUrl
+    axios.get(nextPageUrl)
       .then(res => {
       setNextPageUrl(res.data.next)
-      setPokemons(res.data.results.map(p => p))
       
       function createPokemonObject(pokemons){
         pokemons.forEach( async (pokemon) => {
@@ -32,21 +31,19 @@ const getAllPokemons = async () => {
 
       }
       createPokemonObject(pokemons)
+    }
+      
 
-    })
-
- 
 }
 
  
-
+useEffect(() => {
+  getAllPokemons()
+ }, [])
 
   
 
 
-
-
-  if(loading) return "Loading...."
 
     return(
       <div>
@@ -64,7 +61,7 @@ const getAllPokemons = async () => {
         
           
         </div>
-        <button onClick={getAllPokemons()}> </button>
+        <button onClick={getAllPokemons}> Load More</button>
 
       </div>
 
