@@ -38,18 +38,18 @@ function App() {
     getAllPokemons()
    }, [])
 
-
+console.log(pokemons)
 
     return(
       <div>
-         <div>
+         <div className="display">
           {
             pokemons.map((pokemon, index) =>
             <Dex
             key={index}
             id={pokemon.id}
             name={pokemon.name}
-            base_experience={pokemon.base_experience}
+            sprite = {pokemon.sprites.front_default}
             />
 
           )}
