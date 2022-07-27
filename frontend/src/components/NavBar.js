@@ -6,10 +6,11 @@ export default function NavBar(){
 
      return (
           <div className="NavBar">
-               <nav>
-                    <img src={title}> </img>
-                    <img src={icon}> </img>
-               </nav>
+               <header className="header">
+                    <img className="icon" src={icon}/> 
+                    <img className="title" src={title}/> 
+                    
+               </header>
           
           </div>
 

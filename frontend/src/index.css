@@ -22,3 +22,24 @@ p::first-letter {
   flex-wrap: wrap;
 }
 
+.title{
+  width:25%;
+  height:18%;
+
+}
+
+.icon {
+  margin-right:5%;
+  margin-top:8%;
+  width:10%;
+  height:18%;
+
+}
+
+.header{
+  height:100px;
+  justify-content: center;
+  background: linear-gradient(90deg, #3a38d4 1.18%, #837cf1 100%);
+  display: flex;
+}
+
