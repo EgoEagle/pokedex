@@ -11,9 +11,9 @@ export default function PokemonList({id,name,sprite,type}){
 
      return(
           <div className={`dex ${style}`} key={id}>
-               <p>{id}</p>
-               <p>{type}</p>
-               <p>{name}</p>
+               <p className="id">#{id}</p>    
+               <p className="name">{name}</p> 
+               <p className="type">{type}</p> 
                <img src={sprite}/>
  
 

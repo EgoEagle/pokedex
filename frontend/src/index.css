@@ -12,10 +12,6 @@ code {
     monospace;
 }
 
-p::first-letter {
-  text-transform:capitalize;
-}
-
 
 
 button:hover {
@@ -70,8 +66,9 @@ button {
 
 
 .display{
-  margin-left:12%;
-  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  width:960px;
   display: flex;
   flex-wrap: wrap;
 
@@ -164,5 +161,29 @@ button {
 
 .dex{
   width:150px;
+  text-align: center;
+  line-height: 5px;
+  border-radius: 15px;
+  margin:5px;
+}
+
+.name{
+  font-weight:bold;
 
 }
+
+.id{
+  font-size:15px;
+  color:rgb(117, 108, 108);
+
+}
+
+.type{
+  font-size:12px;
+
+}
+
+p::first-letter {
+  text-transform:capitalize;
+}
+
