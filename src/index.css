@@ -12,8 +12,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.popup-inner{
+  position:relative;
+  padding:32px;
+  width:100%;
+  max-width:640px;
+  background-color: white;
+
+}
 
 
+.popup{
+  position:fixed;
+  background-color :rgba(0,0,0,0.8);
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  align-items: center;
+
+  display:flex;
+  justify-content: center;
+
+}
 
 button:hover {
   background-image: linear-gradient(
