@@ -1,4 +1,5 @@
 body {
+  background: linear-gradient(90deg, #1b1b1d 1.18%, #837cf1 100%);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -92,7 +93,7 @@ button {
 .header{
   height:170px;
   justify-content: center;
-  background: linear-gradient(90deg, #3a38d4 1.18%, #837cf1 100%);
+  
   display: flex;
 }
 
@@ -128,26 +129,25 @@ button {
 }
 
 .rock {
-  background-color: rgb(148, 81, 81);
+  background-color: #B8A038;
 }
 .ghost {
-  background-color: #705898 ;
+  background-color: #705898;
 }
 .electric {
-  background-color: rgb(255, 255, 161);
+  background-color: #FAB536;
 }
 .bug {
-  background-color: #F6D6A7;
+  background-color: #A8B820;
 }
 .poison {
   background-color: #e0a7f6;
 }
 .normal {
-  background-color: #A8A878
-  ;
+  background-color: #A8A878;
 }
 .fairy {
-  background-color: rgba(255, 192, 203, 0.863);
+  background-color: #EE99AC;
 }
 .fire {
   background-color: #f84f4f;
@@ -156,7 +156,7 @@ button {
   background-color:#78C850;
 }
 .water {
-  background-color:#E0F1FD;
+  background-color:#5BC7E5;
 }
 
 .dex{
@@ -174,11 +174,18 @@ button {
 
 .id{
   font-size:15px;
-  color:rgb(117, 108, 108);
+  color:rgb(63, 56, 56);
 
 }
 
 .type{
+  border:1px solid white;
+  color:white;
+  border-radius:5px;
+  margin-left:30%;
+  padding:6px;
+  width:30%;
+  height:3%;
   font-size:12px;
 
 }
