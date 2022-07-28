@@ -59,7 +59,11 @@ function App() {
             id={pokemon.id}
             name={pokemon.name}
             type={pokemon.types[0].type.name}
+            weight={pokemon.weight}
             sprite = {pokemon.sprites.front_default}
+            form = {pokemon.forms[0].name}
+            species = {pokemon.species.name}
+            descriptionUrl = {pokemon.species.url}
             />
 
           )}
