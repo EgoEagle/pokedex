@@ -14,11 +14,9 @@ export default function PokemonList({id,name,sprite,type,forms,species,stats,abi
           axios.get(descriptionUrl)
           .then (res => {
                let json = JSON.stringify(res.data.flavor_text_entries[7].flavor_text);
-               json = json.replace(/\\f|\\n/g, '');
+               json = json.replace(/\\f|\\n/g, ' ');
    
                setDescription(json);
-               
-               console.log(description)
           })
      },[description])
 
