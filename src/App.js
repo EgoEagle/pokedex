@@ -18,7 +18,6 @@ function App() {
       setNextPageUrl(res.data.next)
       
       function createPokemonObject (pokemons){
-        
         pokemons.forEach( async (pokemon) => {
           axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
           .then (res => {
@@ -49,7 +48,7 @@ function App() {
 
     
    }, [])
-
+    
     return(
       <div className="displayDiv">
         <NavBar/>
@@ -62,9 +61,7 @@ function App() {
             name={pokemon.name}
             type={pokemon.types[0].type.name}
             flag = { pokemon.types.length>1 ? true : false}
-
-            type2 = {flag ? pokemon.types[1].type.name : " "}
-            
+            type2 = {pokemon.types.length>1 ? pokemon.types[1].type.name : null}
           
 
             
@@ -78,8 +75,8 @@ function App() {
             />
 
           )}
-        
           
+        
         </div>
         <button className="load" onClick={getAllPokemons}> Load More</button>
 

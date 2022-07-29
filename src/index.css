@@ -63,7 +63,7 @@ code {
 }
 
 .description{
-  line-height: 15px;
+  line-height: 18px;
 }
 
 
@@ -225,5 +225,15 @@ p::first-letter {
 
 .abilities>p{
   margin-left:5px;
+  text-transform: capitalize;
 
+}
+
+.typeBox{
+  justify-content: center;
+  display:flex;
+}
+
+.typeBox>p{
+  margin:2px;
 }
