@@ -10,8 +10,12 @@ function Popup(prop) {
           <p> {prop.type} </p>
           <p> {prop.type2} </p>
          
+          <div className="abilities"> 
+          <p>Abilities :  </p> 
+          <p> {prop.abilities} </p> 
           
-          <p> Abilities : {prop.abilities} </p>
+          </div>
+          
           <p className="description"> {prop.text} </p>
           {prop.children}
 
