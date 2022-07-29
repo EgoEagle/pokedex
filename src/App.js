@@ -10,11 +10,13 @@ function App() {
   const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
   let flag = false;
   pokemons.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
-
+  let cancel
 
   const getAllPokemons = async () => {
  
-    axios.get(nextPageUrl).then(res => {
+    axios.get(nextPageUrl,{
+      cancelToken: new axios.CancelToken( c =>  cancel = c)
+    }).then(res => {
       setNextPageUrl(res.data.next)
       
       function createPokemonObject (pokemons){
@@ -45,7 +47,8 @@ function App() {
 
   useEffect(() => {
     getAllPokemons()
-
+    return () =>  cancel()
+    
     
    }, [])
     

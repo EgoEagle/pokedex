@@ -12,17 +12,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.profileBox{
+  border:5px solid gray;
+
+
+}
+
 .popup-inner{
   position:relative;
   padding:32px;
   width:100%;
   max-width:640px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+  border-radius:9px;
 
 }
 
+.popupImg{
+  margin-right:70%;
+  width:30%;
+  height:30%;
+}
+
+.popupName{
+  margin-right:70%;
+  font-size: 20px;
+}
+
+.popupId{
+  margin-right:70%;
+}
 
 .popup{
+  
   position:fixed;
   background-color :rgba(0,0,0,0.8);
   top:0;

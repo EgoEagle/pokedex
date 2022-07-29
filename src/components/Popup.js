@@ -9,9 +9,11 @@ function Popup(prop) {
   return (prop.trigger) ? (
     <div className="popup">
       <div className="popup-inner">
-          <p> {prop.id} </p>
-          <p> {prop.name} </p>
-          <img src={prop.sprite}/>
+          <div className="profileBox">
+            <p className="popupId"> #{prop.id} </p>
+            <p className="popupName"> {prop.name} </p>
+            <img className="popupImg" src={prop.sprite}/>
+          </div>
           <div className="typeBox">
             <p> Type :</p>
             <p className={style}> {prop.type} </p>
