@@ -4,10 +4,9 @@ import axios from 'axios';
 
 
 
-export default function PokemonList({id,name,sprite,type,forms,species,stats,abilities,descriptionUrl}){
+export default function PokemonList({id,name,sprite,type,type2,forms,species,stats,abilities,descriptionUrl}){
      const [buttonPopup, setButtonPopup] = useState(false);
      const [description, setDescription] = useState();
-     var data = '{"count" : 1, "stack" : "sometext\\n\\n"}';
      const style = `${type}`
 
      useEffect( ()=> {
@@ -28,6 +27,7 @@ export default function PokemonList({id,name,sprite,type,forms,species,stats,abi
                <p className="id">#{id}</p>    
                <p className="name">{name}</p> 
                <p className="type">{type}</p> 
+               <p className="type">{type2}</p> 
                <img src={sprite}/>
                </div>
                <Popup 
@@ -36,7 +36,9 @@ export default function PokemonList({id,name,sprite,type,forms,species,stats,abi
                     name = {name}
                     sprite = {sprite}
                     type = {type}
+                    type2 = {type2}
                     text = {description}
+                    abilities = {abilities}
                >
                <button onClick={()=> setButtonPopup(false)}> Close </button>     
                </Popup>

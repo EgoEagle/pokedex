@@ -8,7 +8,7 @@ import axios from 'axios';
 function App() {
   const [pokemons, setPokemons] = useState([])
   const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
-  let pokemonArray = [];
+  let flag = false;
   pokemons.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
 
 
@@ -25,6 +25,7 @@ function App() {
             pokemons.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
             setPokemons(currentList =>[...currentList,res.data])
 
+
           })
 
           pokemons.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0))
@@ -40,6 +41,7 @@ function App() {
     
     
   }
+
 
 
   useEffect(() => {
@@ -59,11 +61,20 @@ function App() {
             id={pokemon.id}
             name={pokemon.name}
             type={pokemon.types[0].type.name}
+            flag = { pokemon.types.length>1 ? true : false}
+
+            type2 = {flag ? pokemon.types[1].type.name : " "}
+            
+          
+
+            
+
             weight={pokemon.weight}
             sprite = {pokemon.sprites.front_default}
             form = {pokemon.forms[0].name}
             species = {pokemon.species.name}
             descriptionUrl = {pokemon.species.url}
+            abilities = {pokemon.abilities[0].ability.name}
             />
 
           )}

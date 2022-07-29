@@ -8,6 +8,10 @@ function Popup(prop) {
           <p> {prop.name} </p>
           <img src={prop.sprite}/>
           <p> {prop.type} </p>
+          <p> {prop.type2} </p>
+         
+          
+          <p> Abilities : {prop.abilities} </p>
           <p className="description"> {prop.text} </p>
           {prop.children}
 
