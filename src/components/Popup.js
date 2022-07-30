@@ -9,25 +9,32 @@ function Popup(prop) {
   return (prop.trigger) ? (
     <div className="popup">
       <div className="popup-inner">
-          <div className="profileBox">
-            <p className="popupId"> #{prop.id} </p>
-            <p className="popupName"> {prop.name} </p>
-            <img className="popupImg" src={prop.sprite}/>
-          </div>
-          <div className="typeBox">
-            <p> Type :</p>
-            <p className={style}> {prop.type} </p>
-            <p className={style2}> {prop.type2} </p>
-          </div>
+        <p className="popupId"> #{prop.id} </p>
+        <p className="popupName"> {prop.name} </p>
+        <div className="mainProfile">
+          <span className="profileBox">
+            <img className={`popupImg ${style} `} src={prop.sprite}/>
+          </span>
+
+          <div className="profileBox2">
+            <div className="typeBox">
+              <p> Type :</p>
+              <p className={style}> {prop.type} </p>
+              <p className={style2}> {prop.type2} </p>
+            </div>
+            
           
-         
-          <div className="abilities"> 
-          <p>Abilities :  </p> 
-          <p> {prop.abilities} </p> 
-          
+            <div className="abilities"> 
+            <p>Abilities :  </p> 
+            <p> {prop.abilities} </p> 
+            </div>
           </div>
+
+        </div>
           
-          <p className="description"> {prop.text} </p>
+          <div className="profileBox3">
+            <p className="description"> {prop.text} </p>
+          </div>
           {prop.children}
 
       </div>

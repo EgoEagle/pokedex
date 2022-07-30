@@ -13,35 +13,51 @@ code {
     monospace;
 }
 
+.mainProfile{
+    display:flex;
+    margin: 25px;
+}
+
 .profileBox{
-  border:5px solid gray;
 
+  
+}
 
+.profileBox2{
+  margin-left:30%;
+}
+
+.profileBox3{
+  width:600px;
+  margin-left:15px;
 }
 
 .popup-inner{
   position:relative;
-  padding:32px;
+  color:white;
   width:100%;
   max-width:640px;
-  background-color: rgb(255, 255, 255);
+  background: linear-gradient(90deg, #1b1b1d 1.18%, #837cf1 100%);
   border-radius:9px;
 
 }
 
 .popupImg{
-  margin-right:70%;
-  width:30%;
-  height:30%;
+  background: linear-gradient(90deg, #1b1b1d 1.18%, #837cf1 100%);
+  border-radius: 50%;
+  border: 2px inset rgb(196, 196, 196);
+  width:150%;
+  height:100%;
+  
 }
 
 .popupName{
-  margin-right:70%;
+  margin-right:65%;
   font-size: 20px;
 }
 
 .popupId{
-  margin-right:70%;
+  margin-right:65%;
 }
 
 .popup{
@@ -53,7 +69,6 @@ code {
   width:100%;
   height:100%;
   align-items: center;
-
   display:flex;
   justify-content: center;
 
@@ -144,69 +159,87 @@ code {
 }
 
 .ground {
+  border: 5px inset #E0C068;
   background-color: #E0C068;
 }
 .ice {
+  border: 5px inset #98D8D8;
   background-color: #98D8D8;
 }
 
 .steel {
+  border: 5px inset #B8B8D0;
   background-color: #B8B8D0;
 }
 
 .fighting {
   background-color: #C03028;
+  border: 5px inset #C03028;
 }
 
 .dragon {
   background-color: #7038F8;
+  border: 5px inset #7038F8;
 }
 
 .flying {
   background-color: #A890F0;
+  border: 5px inset #A890F0;
 }
 
 .dark {
   background-color: #705848;
+  border: 5px inset #705848;
 }
 
 .psychic {
+  border: 5px inset #A65E9A;
   background-color: #A65E9A;
 }
 
 .rock {
+  border: 5px inset #B8A038;
   background-color: #B8A038;
 }
 .ghost {
+  border: 5px inset #B8B8D0;
   background-color: #705898;
 }
 .electric {
+  border: 5px inset #FAB536;
   background-color: #FAB536;
 }
 .bug {
+  border: 5px inset #A8B820;
   background-color: #A8B820;
 }
 .poison {
+  border: 5px inset #e0a7f6;
   background-color: #e0a7f6;
 }
 .normal {
+  border: 5px inset #A8A878;
   background-color: #A8A878;
 }
 .fairy {
+  border: 5px inset #EE99AC;
   background-color: #EE99AC;
 }
 .fire {
+  border: 5px inset #f84f4f;
   background-color: #f84f4f;
 }
 .grass {
+  border: 5px inset #78C850;
   background-color:#78C850;
 }
 .water {
+  border: 5px inset #5BC7E5;
   background-color:#5BC7E5;
 }
 
 .dex{
-  width:150px;
+  width:130px;
   text-align: center;
   line-height: 5px;
   border-radius: 15px;
