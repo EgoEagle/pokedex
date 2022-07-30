@@ -33,7 +33,7 @@ export default function PokemonList({id,name,sprite,type,type2,forms,species,sta
                
                <img src={sprite}/>
                </div>
-               <Popup 
+               <Popup  
                     trigger={buttonPopup}  
                     id = {id}
                     name = {name}
@@ -43,8 +43,9 @@ export default function PokemonList({id,name,sprite,type,type2,forms,species,sta
                     text = {description}
                     abilities = {abilities}
                     flag = {flag}
+                    setState = {setButtonPopup}
                >
-               <button onClick={()=> setButtonPopup(false)}> Close </button>     
+                 <button className="close" onClick={()=> setButtonPopup(false)}> Close </button>
                </Popup>
 
           </div>
