@@ -28,6 +28,16 @@ function Popup(prop) {
             <p>Abilities :  </p> 
             <p> {prop.abilities} </p> 
             </div>
+
+            <div className="stats"> 
+            <p>HP : {prop.hp} </p> 
+            <p>Attack : {prop.atk} </p> 
+            <p>Defense : {prop.def} </p> 
+            <p>Sp Attack : {prop.spatk} </p> 
+            <p>Sp Defense : {prop.spdef} </p>
+            <p>Speed : {prop.spd} </p>  
+            
+            </div>
           </div>
 
         </div>

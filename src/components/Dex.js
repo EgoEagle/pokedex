@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-export default function PokemonList({id,name,sprite,type,type2,forms,species,stats,abilities,descriptionUrl,flag}){
+export default function PokemonList({id,name,sprite,type,type2,hp,atk,def,spatk,spdef,spd,abilities,descriptionUrl,flag}){
      const [buttonPopup, setButtonPopup] = useState(false);
      const [description, setDescription] = useState();
      const style = `${type}`
@@ -44,6 +44,12 @@ export default function PokemonList({id,name,sprite,type,type2,forms,species,sta
                     abilities = {abilities}
                     flag = {flag}
                     setState = {setButtonPopup}
+                    hp = {hp}
+                    atk = {atk}
+                    def = {def}
+                    spatk = {spatk}
+                    spdef = {spdef}
+                    spd = {spd}
                >
                  <button className="close" onClick={()=> setButtonPopup(false)}> Close </button>
                </Popup>

@@ -65,6 +65,12 @@ function App() {
             type={pokemon.types[0].type.name}
             flag = { pokemon.types.length>1 ? true : false}
             type2 = {pokemon.types.length>1 ? pokemon.types[1].type.name : null}
+            hp = {pokemon.stats[0].base_stat}
+            atk = {pokemon.stats[1].base_stat}
+            def = {pokemon.stats[2].base_stat}
+            spatk = {pokemon.stats[3].base_stat}
+            spdef = {pokemon.stats[4].base_stat}
+            spd = {pokemon.stats[5].base_stat}
           
 
             

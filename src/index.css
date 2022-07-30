@@ -13,10 +13,21 @@ code {
     monospace;
 }
 
+
+
+
 .close{
+  
+  font-size: 20px;
+  border: none;
+  color:white;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #1b1b1d 1.18%, #4a467a 100%);
   position:absolute;
-  margin-left:40%;
-  top:10px
+  margin-left:38%;
+  top:10px;
+  width:10%;
+  height:8%;
 
 }
 .mainProfile{
@@ -31,13 +42,17 @@ code {
 
 .profileBox2{
   margin-left:40%;
+  
 }
 
 .profileBox3{
   width:40%;
   margin-left:15px;
 }
+.stats > p{
+  font-size: 12px;
 
+}
 .popup-inner{
   position:relative;
   color:white;
@@ -52,20 +67,20 @@ code {
   background: linear-gradient(90deg, #1b1b1d 1.18%, #837cf1 100%);
   border-radius: 50%;
   border: 2px inset rgb(196, 196, 196);
-  width:150%;
+  width:180%;
   height:100%;
   
 }
 
 .popupName{
-  margin-right:65%;
+  margin-right:62%;
   font-size: 20px;
 }
 
 .popupId{
   opacity: 0.5;
   font-style: italic;
-  margin-right:65%;
+  margin-right:62%;
 }
 
 .popup{
@@ -110,6 +125,7 @@ code {
 
 .description{
   line-height: 18px;
+  font-size:12px;
 }
 
 
@@ -290,14 +306,17 @@ p::first-letter {
 .abilities>p{
   margin-left:5px;
   text-transform: capitalize;
+  font-size: 12px;
 
 }
 
 .typeBox{
   justify-content: center;
   display:flex;
+  align-items: baseline;
 }
 
 .typeBox>p{
+  font-size: 12px;
   margin:2px;
 }
