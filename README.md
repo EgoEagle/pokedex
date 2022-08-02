@@ -3,4 +3,5 @@
 
 <h3> Features </h3>
 <p> Click Load More to fetch Pokemons from the first pokemon to the latest pokemon</p>
+<p> Click on each Pokemon for more detailed info </p>
   
