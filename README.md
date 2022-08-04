@@ -6,4 +6,13 @@
 <h3> Features </h3>
 <p> Click Load More to fetch Pokemons from the first pokemon to the latest pokemon</p>
 <p> Click on each Pokemon for more detailed info </p>
+<p> Available Info </p>
+<ul> 
+  <li>Stats</li>
+  <li>Sprite</li>
+  <li>Flavor Text</li>
+  <li>Index</li>
+  <li>Types </li>
+  <li>Ability </li>
+</ul>
   
