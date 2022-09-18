@@ -90,7 +90,7 @@ function App() {
         <button className="load" onClick={getAllPokemons}> Load More</button>
 
       </div>
-/////
+
     );
 }
 
