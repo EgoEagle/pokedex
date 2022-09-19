@@ -1,7 +1,7 @@
 import React , {useState , useEffect} from 'react';
 import Popup from './Popup';
 import axios from 'axios';
-
+//
 //
 
 export default function PokemonList({id,name,sprite,type,type2,hp,atk,def,spatk,spdef,spd,abilities,descriptionUrl,flag}){
