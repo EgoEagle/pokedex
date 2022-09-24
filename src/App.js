@@ -3,7 +3,7 @@ import NavBar from './components/NavBar.js';
 import Dex from './components/Dex.js';
 import React , {useState , useEffect} from 'react';
 import axios from 'axios';
-////
+//////
 function App() {
   const [pokemons, setPokemons] = useState([])
   const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
